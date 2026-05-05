@@ -1,47 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Local Singles Near You</title>
+  <title>New Messages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="font-family: Arial, sans-serif; text-align:center; background:#ffffff; padding:20px;">
+<body style="font-family: Arial; background:#ece5dd; margin:0; padding:0;">
 
-<h2 style="font-size:26px; color:#111;">
-Looking for something real?
-</h2>
+<div style="max-width:400px; margin:auto; background:#fff; min-height:100vh;">
 
-<p style="font-size:18px; color:#444; max-width:400px; margin:auto;">
-Thousands of local singles are online right now.  
-Some are just looking for a genuine connection — no games.
-</p>
+  <!-- Header -->
+  <div style="background:#075e54; color:#fff; padding:15px; font-size:18px;">
+    💬 New Message
+  </div>
 
-<br>
+  <!-- Chat -->
+  <div style="padding:15px;">
 
-<img src="FB_IMG_1777896536040.jpg" style="width:90%; max-width:320px; border-radius:12px;">
+    <div style="margin-bottom:10px;">
+      <img src="https://i.imgur.com/yourimage.jpg" 
+      style="width:40px; height:40px; border-radius:50%; vertical-align:middle;">
+      <span style="margin-left:10px; font-weight:bold;">Emily, 42</span>
+    </div>
 
-<p style="font-size:16px; color:#666; margin-top:15px;">
-✔ Verified profiles  
-✔ Real people nearby  
-✔ Private & secure
-</p>
+    <!-- Message 1 -->
+    <div style="background:#dcf8c6; padding:10px; border-radius:10px; 
+    max-width:70%; margin-bottom:10px;">
+      Hey... are you nearby? 🙂
+    </div>
 
-<br>
+    <!-- Message 2 -->
+    <div style="background:#dcf8c6; padding:10px; border-radius:10px; 
+    max-width:70%; margin-bottom:10px;">
+      I saw your profile and got curious...
+    </div>
 
-<a href="https://chhijhf.hubsmartt.com/s/9a24608a59183?track=abk" style="
-display:inline-block;
-padding:14px 28px;
-font-size:18px;
-background:#ff4d6d;
-color:#fff;
-text-decoration:none;
-border-radius:8px;">
-Continue
-</a>
+    <!-- Typing -->
+    <div id="typing" style="display:none; background:#fff; padding:10px; 
+    border-radius:10px; max-width:60%; color:#999;">
+      typing<span id="dots">.</span>
+    </div>
 
-<p style="font-size:13px; color:#999; margin-top:15px;">
-You must be 18+ to enter
-</p>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center; padding:20px;">
+    <a href="https://chhijhf.hubsmartt.com/s/9a24608a59183?track=abs" 
+    style="background:#25d366; color:#fff; padding:15px 25px; 
+    text-decoration:none; font-size:18px; border-radius:8px;">
+      Reply Now
+    </a>
+  </div>
+
+</div>
+
+<script>
+// muncul typing setelah 2 detik
+setTimeout(function(){
+  document.getElementById("typing").style.display = "block";
+}, 2000);
+
+// animasi titik typing
+let dots = document.getElementById("dots");
+let count = 1;
+
+setInterval(function(){
+  count++;
+  if(count > 3) count = 1;
+  dots.innerHTML = ".".repeat(count);
+}, 500);
+</script>
 
 </body>
 </html>

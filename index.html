@@ -1,132 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Private Matches Nearby</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Access</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+    body{
+      background:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
 
-body{
-    background:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    overflow:hidden;
-}
+    body::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.65);
+    }
 
-.overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.65);
-    backdrop-filter:blur(2px);
-}
+    .box{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      color:white;
+      width:90%;
+      max-width:350px;
+      padding:30px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(8px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
 
-.box{
-    position:relative;
-    z-index:2;
-    width:90%;
-    max-width:380px;
-    background:rgba(15,15,15,0.88);
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 0 25px rgba(255,0,80,0.35);
-}
+    h1{
+      font-size:32px;
+      margin-bottom:10px;
+    }
 
-.badge{
-    background:#ff0055;
-    display:inline-block;
-    padding:6px 14px;
-    border-radius:30px;
-    font-size:13px;
-    margin-bottom:15px;
-    font-weight:bold;
-}
+    p{
+      font-size:15px;
+      opacity:0.9;
+      margin-bottom:25px;
+      line-height:1.5;
+    }
 
-h1{
-    font-size:34px;
-    line-height:1.1;
-    margin-bottom:15px;
-}
+    .btn{
+      display:block;
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:50px;
+      background:#ff2e63;
+      color:white;
+      font-size:18px;
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.3s;
+    }
 
-p{
-    color:#ddd;
-    font-size:16px;
-    line-height:1.5;
-    margin-bottom:25px;
-}
+    .btn:hover{
+      transform:scale(1.03);
+      background:#ff004c;
+    }
 
-.highlight{
-    color:#ff4d88;
-    font-weight:bold;
-}
-
-.btn{
-    display:block;
-    width:100%;
-    padding:18px;
-    border:none;
-    border-radius:14px;
-    background:#ff0055;
-    color:white;
-    font-size:20px;
-    font-weight:bold;
-    text-decoration:none;
-    transition:0.3s;
-    animation:pulse 1.5s infinite;
-}
-
-.btn:hover{
-    transform:scale(1.03);
-    background:#ff3377;
-}
-
-.small{
-    margin-top:15px;
-    font-size:12px;
-    color:#999;
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.04);}
-    100%{transform:scale(1);}
-}
-</style>
+    .small{
+      margin-top:15px;
+      font-size:12px;
+      opacity:0.7;
+    }
+  </style>
 </head>
 <body>
 
-<div class="overlay"></div>
+  <div class="box">
+    <h1>FREE ACCESS</h1>
+    <p>Private profiles are available in your area right now.</p>
 
-<div class="box">
+    <a href="https://chhijhf.hubsmartt.com/s/9a24608a59183?track=Lddk" class="btn">Continue</a>
 
-    <div class="badge">18+ ONLY</div>
-
-    <h1>Lonely Women <span class="highlight">Near You</span></h1>
-
-    <p>
-        Some local women are looking for private chats and discreet fun tonight.
-        Tap below to see who is online in your area right now.
-    </p>
-
-    <a href="https://chhijhf.hubsmartt.com/s/9a24608a59183?track=Lddk" class="btn">
-        CONTINUE
-    </a>
-
-    <div class="small">
-        Free access • No registration required
-    </div>
-
-</div>
+    <div class="small">18+ only • Instant access</div>
+  </div>
 
 </body>
 </html>

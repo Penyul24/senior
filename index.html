@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Meet Mature Women Near You</title>
+<title>Private Matches Nearby</title>
 
 <style>
 *{
@@ -14,133 +14,116 @@
 }
 
 body{
+    background:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
     height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
-    url('FB_IMG_1778027415365.jpg') center/cover no-repeat;
-    
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
     color:white;
-    padding:20px;
+    overflow:hidden;
 }
 
-.container{
-    max-width:420px;
-    width:100%;
-    animation:fade 1s ease;
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.65);
+    backdrop-filter:blur(2px);
+}
+
+.box{
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:380px;
+    background:rgba(15,15,15,0.88);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(255,0,80,0.35);
 }
 
 .badge{
+    background:#ff0055;
     display:inline-block;
-    background:#ffb300;
-    color:black;
-    font-size:13px;
-    font-weight:bold;
-    padding:8px 14px;
+    padding:6px 14px;
     border-radius:30px;
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:42px;
-    line-height:1.1;
-    margin-bottom:18px;
-    font-weight:700;
-}
-
-p{
-    font-size:18px;
-    color:#ddd;
-    margin-bottom:30px;
-    line-height:1.5;
-}
-
-.cta{
-    display:block;
-    width:100%;
-    padding:18px;
-    border-radius:60px;
-    background:#ff2d55;
-    color:white;
-    text-decoration:none;
-    font-size:22px;
+    font-size:13px;
+    margin-bottom:15px;
     font-weight:bold;
-    transition:.3s;
-    box-shadow:0 0 25px rgba(255,45,85,.45);
 }
-
-.cta:hover{
-    transform:scale(1.03);
-    background:#ff4368;
-}
-
-.users{
-    margin-top:18px;
-    font-size:14px;
-    color:#ccc;
-}
-
-.dot{
-    color:#4cff78;
-    font-size:18px;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@media(max-width:480px){
 
 h1{
     font-size:34px;
+    line-height:1.1;
+    margin-bottom:15px;
 }
 
 p{
+    color:#ddd;
     font-size:16px;
+    line-height:1.5;
+    margin-bottom:25px;
 }
 
-.cta{
+.highlight{
+    color:#ff4d88;
+    font-weight:bold;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    background:#ff0055;
+    color:white;
     font-size:20px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:0.3s;
+    animation:pulse 1.5s infinite;
 }
 
+.btn:hover{
+    transform:scale(1.03);
+    background:#ff3377;
+}
+
+.small{
+    margin-top:15px;
+    font-size:12px;
+    color:#999;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.04);}
+    100%{transform:scale(1);}
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<div class="overlay"></div>
 
-    <div class="badge">
-        PRIVATE MEMBERS ONLY
-    </div>
+<div class="box">
 
-    <h1>
-        Meet Mature Women<br>
-        In Your Area
-    </h1>
+    <div class="badge">18+ ONLY</div>
+
+    <h1>Lonely Women <span class="highlight">Near You</span></h1>
 
     <p>
-        Thousands of women over 40 are online now looking for companionship and private chat.
+        Some local women are looking for private chats and discreet fun tonight.
+        Tap below to see who is online in your area right now.
     </p>
 
-    <a href="https://chhijhf.pxlsm.com/s/9a24608a59183?track=abs" class="cta">
-        Continue
+    <a href="https://chhijhf.hubsmartt.com/s/9a24608a59183?track=Lddk" class="btn">
+        CONTINUE
     </a>
 
-    <div class="users">
-        <span class="dot">●</span>
-        2,483 members active today
+    <div class="small">
+        Free access • No registration required
     </div>
 
 </div>

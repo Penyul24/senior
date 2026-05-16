@@ -3,66 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Singles Near You</title>
+<title>Private Community</title>
 
 <style>
-body{
+*{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    text-align:center;
-    color:#111;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
-.container{
-    max-width:350px;
+body{
+    background:#111;
+    color:white;
+}
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero video,
+.hero img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(60%);
+}
+
+.overlay{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
     padding:20px;
 }
 
-h1{
-    font-size:32px;
-    margin-bottom:15px;
+.logo{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#22c55e;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    margin-bottom:20px;
 }
 
-p{
+.title{
+    font-size:42px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.desc{
     font-size:18px;
-    color:#555;
-    margin-bottom:30px;
+    opacity:0.9;
+    margin-bottom:25px;
 }
 
-.btn{
-    display:inline-block;
-    background:#ff2d55;
+.stats{
+    display:flex;
+    gap:40px;
+    margin-bottom:35px;
+}
+
+.stat h2{
+    font-size:34px;
+}
+
+.join-btn{
+    background:#22c55e;
     color:white;
-    padding:16px 40px;
-    border-radius:50px;
     text-decoration:none;
-    font-size:20px;
+    padding:18px 50px;
+    border-radius:50px;
+    font-size:22px;
     font-weight:bold;
     transition:0.3s;
 }
 
-.btn:hover{
-    background:#e60045;
-    transform:scale(1.03);
+.join-btn:hover{
+    transform:scale(1.05);
+}
+
+.note{
+    margin-top:25px;
+    font-size:14px;
+    opacity:0.7;
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
-    <h1>Find Singles Near You</h1>
-    <p>Meet local women online now.</p>
+<div class="hero">
 
-    <!-- Ganti link ini -->
-    <a href="https://llqkol.conecttonline.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2207990&s3=Bol&s5=Bol&click_id=Bol" class="btn">
-        Continue
-    </a>
+    <!-- Ganti jadi video/mp4 -->
+    <img src="background.jpg" alt="bg">
+
+    <div class="overlay">
+
+        <div class="logo">👥</div>
+
+        <div class="title">Private Girls Community</div>
+
+        <div class="desc">
+            Join thousands of active members online now
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <h2>130K</h2>
+                <p>Members</p>
+            </div>
+
+            <div class="stat">
+                <h2>50K</h2>
+                <p>Online</p>
+            </div>
+        </div>
+
+        <a class="join-btn"
+           href="https://llqkol.conecttonline.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2207990&s3=Bol&s5=Bol&click_id=Bol">
+           Join Now
+        </a>
+
+        <div class="note">
+            Secure private community access
+        </div>
+
+    </div>
+
 </div>
 
 </body>

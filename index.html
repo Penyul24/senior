@@ -3,92 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Whatsapp Call Me</title>
+<title>Dating Match</title>
 
 <style>
-body{
+*{
     margin:0;
-    height:100vh;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
+body{
+    background:#f5f5f5;
     display:flex;
     justify-content:center;
     align-items:center;
-
-    background:url("1026609677557329036.jpg") center/cover no-repeat;
-    font-family:Arial,sans-serif;
+    height:100vh;
 }
 
-.box{
-    width:90%;
-    max-width:360px;
-
-    text-align:center;
-
-    background:rgba(0,0,0,.35);
-    padding:24px;
-    border-radius:22px;
-}
-
-.title{
-    color:#fff;
-    font-size:30px;
-    font-weight:700;
-    margin-bottom:8px;
-}
-
-.bio{
-    color:#fff;
-    font-size:16px;
-    margin-bottom:20px;
-}
-
-.btn{
-    display:block;
-    text-decoration:none;
-
+.card{
+    width:360px;
     background:#fff;
-    color:#111;
-
-    padding:16px;
-    margin:12px 0;
-
-    border-radius:40px;
-
-    font-size:18px;
-    font-weight:600;
-    transition:.25s;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-.btn:hover{
-    transform:scale(1.03);
-    background:#f5f5f5;
+.photo{
+    position:relative;
+}
+
+.photo img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    display:block;
+}
+
+.info{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:20px;
+    color:#fff;
+    background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+
+.info h2{
+    font-size:28px;
+}
+
+.info p{
+    font-size:15px;
+    margin-top:5px;
+}
+
+.text{
+    padding:20px;
+    text-align:center;
+    color:#555;
+    font-size:16px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    padding:0 20px 25px;
+}
+
+.buttons button{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.left{
+    background:#ff4d4d;
+    color:#fff;
+}
+
+.right{
+    background:#1ecb63;
+    color:#fff;
+}
+
+button:hover{
+    transform:scale(1.05);
 }
 </style>
 </head>
-
 <body>
 
-<div class="box">
+<div class="card">
 
-    <div class="title">
-        Call Me
+    <div class="photo">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" alt="">
+        <div class="info">
+            <h2>Emma, 27</h2>
+            <p>📍 New York • Loves Travel ❤️</p>
+        </div>
     </div>
 
-    <div class="bio">
-        💝 Chat with me on WhatsApp or watch my videos.
+    <div class="text">
+        Swipe to see the next profile
     </div>
 
-    <a href="https://chhijhf.eugetpix.com/s/9a24608a59183?track=lewaisuo"
-       class="btn"
-       target="_blank">
-        WhatsApp
-    </a>
+    <div class="buttons">
+        <button class="left" onclick="window.location.href='https://chhijhf.eugetpix.com/s/9a24608a59183?track=lewaisuo'">
+            ⬅ Swipe Left
+        </button>
 
-    <a href="https://chhijhf.eugetpix.com/s/9a24608a59183?track=lewaisuo"
-       class="btn"
-       target="_blank">
-        Videos
-    </a>
+        <button class="right" onclick="window.location.href='https://chhijhf.eugetpix.com/s/9a24608a59183?track=lewaisuo'">
+            Swipe Right ➜
+        </button>
+    </div>
 
 </div>
 

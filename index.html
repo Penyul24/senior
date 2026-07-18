@@ -6,88 +6,103 @@
 <title>Find Singles Near You</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff4b6e, #ff7a18);
-    color: white;
-    text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container {
-    max-width: 400px;
-    margin: 60px auto;
-    padding: 20px;
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ff4b6e,#ff7a18);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
 }
 
-.card {
-    background: rgba(0,0,0,0.4);
-    border-radius: 15px;
-    padding: 25px;
+.container{
+    width:100%;
+    max-width:400px;
+    padding:20px;
 }
 
-h1 {
-    font-size: 26px;
-    margin-bottom: 15px;
+.card{
+    background:rgba(0,0,0,.45);
+    border-radius:18px;
+    padding:30px 25px;
+    text-align:center;
+    position:relative;
+    z-index:1;
 }
 
-p {
-    font-size: 16px;
-    margin-bottom: 20px;
+h1{
+    font-size:28px;
+    margin-bottom:15px;
 }
 
-.button {
-    display: block;
-    background: #00e676;
-    color: black;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
+p{
+    font-size:16px;
+    line-height:1.5;
+    margin-bottom:20px;
 }
 
-.button:hover {
-    background: #00c853;
+.button{
+    display:block;
+    width:100%;
+    background:#00e676;
+    color:#000;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    padding:16px;
+    border-radius:10px;
+    margin:12px 0;
+    cursor:pointer;
+    position:relative;
+    z-index:999;
+    transition:.2s;
 }
 
-.small {
-    font-size: 12px;
-    margin-top: 15px;
-    opacity: 0.8;
+.button:hover{
+    background:#00c853;
+}
+
+.button:active{
+    transform:scale(.98);
+}
+
+.small{
+    font-size:12px;
+    opacity:.8;
+    margin-top:15px;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
+    <div class="card">
 
-<div class="card">
+        <h1>Find Singles Near You</h1>
 
-<h1>Find Singles Near You</h1>
+        <p>
+            There are many local singles waiting to chat.<br>
+            Confirm your age to continue.
+        </p>
+        </a>
 
-<p>
-There are many local singles waiting to chat.  
-Confirm your age to continue.
-</p>
+        <a class="button" href="https://track.chatvideocall.net/s/9a24608a59183?track=lewaisuo">
+            Enter Now
+        </a>
 
-<a href="https://track.chatvideocall.net/s/9a24608a59183?track=lewaisuo" class="button">
-Yes, I am 18+
-</a>
+        <p class="small">
+            You must be 18+ to enter this site.
+        </p>
 
-<a href="https://track.chatvideocall.net/s/9a24608a59183?track=lewaisuo" class="button">
-Enter Now
-</a>
-
-<p class="small">
-You must be 18+ to enter this site.
-</p>
-
-</div>
-
+    </div>
 </div>
 
 </body>

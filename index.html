@@ -32,34 +32,43 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background:
+
+      /* Gambar Imgix */
+      background-image:
         linear-gradient(
           90deg,
           rgba(15, 11, 8, 0.96) 0%,
           rgba(15, 11, 8, 0.78) 45%,
           rgba(15, 11, 8, 0.30) 100%
         ),
-        url('https://6a63d7122a4b54c07b26f8a4.imgix.net/mature-woman-face-same-united-states--893778.jpeg?auto=format,compress&fit=crop&w=1200&q=85')
-        center center / cover no-repeat;
+        url("https://6a63d7122a4b54c07b26f8a4.imgix.net/mature-woman-face-same-united-states--893778.jpeg?auto=format&fit=crop&w=1600&q=85");
+
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .overlay {
       position: absolute;
       inset: 0;
+
       background:
         radial-gradient(
           circle at 70% 50%,
           rgba(191, 158, 93, 0.12),
           transparent 40%
         );
+
       pointer-events: none;
     }
 
     .content {
       position: relative;
       z-index: 2;
+
       width: 90%;
       max-width: 1150px;
+
       padding: 60px 20px;
     }
 
@@ -100,21 +109,28 @@
       align-items: center;
       justify-content: center;
       gap: 15px;
+
       min-width: 260px;
       padding: 18px 35px;
+
       border: 1px solid #d1b06a;
+
       background: linear-gradient(
         135deg,
         #d9b86f,
         #a98442
       );
+
       color: #211a11;
       text-decoration: none;
+
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
+
       transition: all 0.35s ease;
+
       box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
     }
 
@@ -136,9 +152,11 @@
 
     .bottom-text {
       margin-top: 70px;
+
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
+
       color: rgba(245, 238, 227, 0.55);
     }
 
@@ -149,18 +167,24 @@
       margin-bottom: 25px;
     }
 
+    /* MOBILE */
     @media (max-width: 768px) {
+
       .hero {
         min-height: 100svh;
-        background:
+
+        background-image:
           linear-gradient(
             180deg,
-            rgba(15, 11, 8, 0.40) 0%,
-            rgba(15, 11, 8, 0.90) 65%,
-            rgba(15, 11, 8, 0.98) 100%
+            rgba(15, 11, 8, 0.25) 0%,
+            rgba(15, 11, 8, 0.65) 45%,
+            rgba(15, 11, 8, 0.97) 100%
           ),
-          url('https://images.unsplash.com/6a63d7122a4b54c07b26f8a4.imgix.net')
-          center center / cover no-repeat;
+          url("https://6a63d7122a4b54c07b26f8a4.imgix.net/mature-woman-face-same-united-states--893778.jpeg?auto=format&fit=crop&w=1200&q=85");
+
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
 
       .content {
@@ -240,4 +264,3 @@
 
 </body>
 </html>
-```

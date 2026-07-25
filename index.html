@@ -4,12 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Meet Someone Special</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>My Profile</title>
 
   <style>
     * {
@@ -19,201 +14,89 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #17130f;
-      color: #f5eee3;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: linear-gradient(135deg, #ffb6c9, #f98eae);
+      font-family: Arial, sans-serif;
     }
 
-    .hero {
-      position: relative;
+    .container {
+      width: 100%;
+      max-width: 420px;
       min-height: 100vh;
+      padding: 60px 25px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      margin-bottom: 45px;
+    }
+
+    
+    .cta {
+      width: 100%;
+      max-width: 330px;
+      height: 58px;
+      margin-bottom: 20px;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      gap: 12px;
 
-      /* Gambar Imgix */
-      background-image:
-        linear-gradient(
-          90deg,
-          rgba(15, 11, 8, 0.96) 0%,
-          rgba(15, 11, 8, 0.78) 45%,
-          rgba(15, 11, 8, 0.30) 100%
-        ),
-        url("https://6a63d7122a4b54c07b26f8a4.imgix.net/FB_IMG_1784880698864[1].jpg?auto=format&fit=crop&w=1600&q=85");
+      border-radius: 50px;
+      background: white;
+      color: #e75480;
 
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 70% 50%,
-          rgba(191, 158, 93, 0.12),
-          transparent 40%
-        );
-
-      pointer-events: none;
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
-
-      width: 90%;
-      max-width: 1150px;
-
-      padding: 60px 20px;
-    }
-
-    .small-title {
-      color: #d1b06a;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(58px, 8vw, 105px);
-      line-height: 0.88;
-      font-weight: 500;
-      max-width: 650px;
-      margin-bottom: 35px;
-    }
-
-    h1 span {
-      color: #d1b06a;
-      font-style: italic;
-    }
-
-    .description {
-      max-width: 520px;
-      font-size: 16px;
-      line-height: 1.9;
-      color: #ded5c8;
-      font-weight: 300;
-      margin-bottom: 40px;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-
-      min-width: 260px;
-      padding: 18px 35px;
-
-      border: 1px solid #d1b06a;
-
-      background: linear-gradient(
-        135deg,
-        #d9b86f,
-        #a98442
-      );
-
-      color: #211a11;
       text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
 
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
 
-      transition: all 0.35s ease;
-
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+      transition: all 0.25s ease;
     }
 
     .cta:hover {
-      background: transparent;
-      color: #f0d18a;
       transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
     }
 
-    .cta-arrow {
-      font-size: 20px;
-      transition: transform 0.3s ease;
+    .cta:active {
+      transform: scale(0.97);
     }
 
-    .cta:hover .cta-arrow {
-      transform: translateX(5px);
+    /* ICON */
+    .icon {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
     }
 
-    .bottom-text {
-      margin-top: 70px;
-
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-
-      color: rgba(245, 238, 227, 0.55);
-    }
-
-    .decorative-line {
-      width: 80px;
-      height: 1px;
-      background: #d1b06a;
-      margin-bottom: 25px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-
-      .hero {
-        min-height: 100svh;
-
-        background-image:
-          linear-gradient(
-            180deg,
-            rgba(15, 11, 8, 0.25) 0%,
-            rgba(15, 11, 8, 0.65) 45%,
-            rgba(15, 11, 8, 0.97) 100%
-          ),
-          url("https://6a63d7122a4b54c07b26f8a4.imgix.net/FB_IMG_1784880698864[1].jpg?auto=format&fit=crop&w=1200&q=85");
-
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
+    @media (max-width: 480px) {
+      .container {
+        padding-top: 45px;
       }
 
-      .content {
-        padding: 40px 25px;
-        margin-top: 180px;
-      }
-
-      .small-title {
-        font-size: 11px;
-        letter-spacing: 3px;
-      }
-
-      h1 {
-        font-size: 62px;
-        line-height: 0.9;
-      }
-
-      .description {
-        font-size: 14px;
-        line-height: 1.8;
+      .profile-photo {
+        width: 135px;
+        height: 135px;
+        margin-bottom: 40px;
       }
 
       .cta {
-        width: 100%;
-        min-width: unset;
-      }
-
-      .bottom-text {
-        margin-top: 45px;
+        max-width: 100%;
       }
     }
   </style>
@@ -221,46 +104,42 @@
 
 <body>
 
-  <main class="hero">
+  <div class="container">
 
-    <div class="overlay"></div>
-
-    <div class="content">
-
-      <div class="decorative-line"></div>
-
-      <div class="small-title">
-        A New Chapter Awaits
-      </div>
-
-      <h1>
-        Meet Someone<br>
-        <span>Special.</span>
-      </h1>
-
-      <p class="description">
-        Life is better when shared with someone who truly understands you.
-        Discover meaningful connections, genuine conversations, and the
-        possibility of finding someone special to share life's beautiful moments.
-      </p>
-
-      <a
-        href="https://track.chatvideocall.net/s/9a24608a59183?track=lewaisuo"
-        class="cta"
-        target="_blank"
-        rel="noopener noreferrer"
+    <img
+      class="profile-photo"
+      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500"
+      alt="Profile Photo"
+    >
+    <a
+      class="cta"
+      href="https://go.chatvideocall.net/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2011036&s3=xmass&click_id=bacarat"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+        alt="WhatsApp"
       >
-        Discover More
-        <span class="cta-arrow">→</span>
-      </a>
+      WhatsApp
+    </a>
 
-      <div class="bottom-text">
-        Meaningful connections · Genuine conversations · New possibilities
-      </div>
+    <a
+      class="cta"
+      href="https://go.chatvideocall.net/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2011036&s3=xmass&click_id=mykonos"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="icon"
+        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg"
+        alt="Video"
+      >
+      Video
+    </a>
 
-    </div>
-
-  </main>
+  </div>
 
 </body>
 </html>

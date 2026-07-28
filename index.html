@@ -38,7 +38,7 @@
       position: relative;
     }
 
-    /* DECORATIVE HEARTS */
+    /* HEART DECORATION */
     .heart {
       position: absolute;
       color: rgba(255,255,255,0.35);
@@ -61,10 +61,11 @@
 
     @keyframes float {
       0%, 100% {
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
       }
+
       50% {
-        transform: translateY(-10px);
+        transform: translateY(-12px) rotate(8deg);
       }
     }
 
@@ -85,6 +86,19 @@
       box-shadow:
         0 0 15px rgba(255,255,255,0.9),
         0 0 35px rgba(255,255,255,0.7);
+      animation: photoGlow 2.5s ease-in-out infinite;
+    }
+
+    @keyframes photoGlow {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
     }
 
     .profile-photo {
@@ -114,7 +128,7 @@
         0 0 12px rgba(255,255,255,0.9);
     }
 
-    /* DECORATION UNDER TITLE */
+    /* DECORATION */
     .decoration {
       display: flex;
       align-items: center;
@@ -136,10 +150,32 @@
       color: #e91e63;
       font-size: 22px;
       text-shadow: 0 0 8px white;
+      animation: heartBeat 1.4s infinite;
+    }
+
+    @keyframes heartBeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      15% {
+        transform: scale(1.25);
+      }
+
+      30% {
+        transform: scale(1);
+      }
+
+      45% {
+        transform: scale(1.2);
+      }
     }
 
     /* BUTTON */
     .cta {
+      position: relative;
+      overflow: hidden;
+
       width: 100%;
       max-width: 360px;
       height: 72px;
@@ -151,7 +187,7 @@
       gap: 18px;
 
       border-radius: 50px;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.96);
       color: #d92b68;
 
       text-decoration: none;
@@ -162,18 +198,67 @@
         0 8px 0 rgba(220, 60, 110, 0.18),
         0 12px 25px rgba(150, 30, 80, 0.2);
 
-      transition: all 0.25s ease;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+      /* ANIMASI PULSE */
+      animation: buttonPulse 2.5s ease-in-out infinite;
     }
 
+    /* CAHAYA BERGERAK */
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+
+      background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,0.8),
+        transparent
+      );
+
+      transform: skewX(-20deg);
+      animation: shine 3.5s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+
+      45%,
+      100% {
+        left: 150%;
+      }
+    }
+
+    @keyframes buttonPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.025);
+      }
+    }
+
+    /* HOVER */
     .cta:hover {
-      transform: translateY(-4px);
+      transform: translateY(-7px) scale(1.03);
       box-shadow:
-        0 11px 0 rgba(220, 60, 110, 0.18),
-        0 16px 30px rgba(150, 30, 80, 0.25);
+        0 12px 0 rgba(220, 60, 110, 0.18),
+        0 18px 35px rgba(150, 30, 80, 0.3);
+      animation: none;
     }
 
+    /* CLICK */
     .cta:active {
-      transform: translateY(3px);
+      transform: translateY(3px) scale(0.97);
       box-shadow:
         0 4px 0 rgba(220, 60, 110, 0.18),
         0 8px 15px rgba(150, 30, 80, 0.2);
@@ -181,12 +266,26 @@
 
     /* ICON */
     .icon {
+      position: relative;
+      z-index: 2;
       width: 38px;
       height: 38px;
       object-fit: contain;
+
+      transition: transform 0.3s ease;
     }
 
-    /* BOTTOM DECORATION */
+    .cta:hover .icon {
+      transform: scale(1.2) rotate(8deg);
+    }
+
+    /* TEXT */
+    .cta span {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* BOTTOM GLOW */
     .bottom-glow {
       position: fixed;
       width: 500px;
@@ -247,7 +346,6 @@
 
   <div class="container">
 
-```
 <!-- DECORATIVE HEARTS -->
 <div class="heart heart-one">♥</div>
 <div class="heart heart-two">♥</div>
@@ -283,7 +381,7 @@
     src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
     alt="WhatsApp"
   >
-  WhatsApp
+  <span>WhatsApp</span>
 </a>
 
 <!-- VIDEO BUTTON -->
@@ -298,12 +396,10 @@
     src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg"
     alt="Video"
   >
-  Video
+  <span>Video</span>
 </a>
 
 <div class="bottom-glow"></div>
-```
-
   </div>
 
 </body>

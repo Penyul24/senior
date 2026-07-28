@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My Profile</title>
+  <title>Single Momy</title>
 
   <style>
     * {
@@ -18,126 +19,290 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      background: linear-gradient(135deg, #ffb6c9, #f98eae);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.35) 0 3px, transparent 4px),
+        radial-gradient(circle at 85% 20%, rgba(255,255,255,0.3) 0 4px, transparent 5px),
+        linear-gradient(135deg, #ffb6c9, #f98eae, #ff6f9b);
       font-family: Arial, sans-serif;
     }
 
     .container {
       width: 100%;
-      max-width: 420px;
+      max-width: 500px;
       min-height: 100vh;
-      padding: 60px 25px 40px;
+      padding: 60px 25px 50px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
     }
 
-    
+    /* DECORATIVE HEARTS */
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.35);
+      font-size: 45px;
+      animation: float 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .heart-one {
+      left: 8%;
+      top: 38%;
+    }
+
+    .heart-two {
+      right: 8%;
+      top: 48%;
+      font-size: 38px;
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* PROFILE PHOTO */
+    .photo-wrapper {
+      position: relative;
+      width: 175px;
+      height: 175px;
+      margin-bottom: 25px;
+    }
+
+    .photo-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.75);
+      box-shadow:
+        0 0 15px rgba(255,255,255,0.9),
+        0 0 35px rgba(255,255,255,0.7);
+    }
+
     .profile-photo {
-      width: 150px;
-      height: 150px;
+      position: relative;
+      width: 175px;
+      height: 175px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      margin-bottom: 45px;
+      border: 6px solid white;
+      box-shadow:
+        0 10px 30px rgba(180, 40, 90, 0.3);
     }
 
-    
-    .cta {
-      width: 100%;
-      max-width: 330px;
-      height: 58px;
-      margin-bottom: 20px;
+    /* PROFILE NAME */
+    .profile-name {
+      position: relative;
+      color: #e91e63;
+      font-size: 48px;
+      font-weight: 900;
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      text-shadow:
+        2px 2px 0 white,
+        -2px -2px 0 white,
+        0 0 12px rgba(255,255,255,0.9);
+    }
 
+    /* DECORATION UNDER TITLE */
+    .decoration {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
+      width: 220px;
+      margin-bottom: 35px;
+    }
+
+    .line {
+      width: 75px;
+      height: 4px;
+      background: #e91e63;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(255,255,255,0.8);
+    }
+
+    .small-heart {
+      color: #e91e63;
+      font-size: 22px;
+      text-shadow: 0 0 8px white;
+    }
+
+    /* BUTTON */
+    .cta {
+      width: 100%;
+      max-width: 360px;
+      height: 72px;
+      margin-bottom: 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
 
       border-radius: 50px;
-      background: white;
-      color: #e75480;
+      background: rgba(255,255,255,0.95);
+      color: #d92b68;
 
       text-decoration: none;
-      font-size: 17px;
+      font-size: 21px;
       font-weight: bold;
 
-      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.12);
+      box-shadow:
+        0 8px 0 rgba(220, 60, 110, 0.18),
+        0 12px 25px rgba(150, 30, 80, 0.2);
 
       transition: all 0.25s ease;
     }
 
     .cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+      transform: translateY(-4px);
+      box-shadow:
+        0 11px 0 rgba(220, 60, 110, 0.18),
+        0 16px 30px rgba(150, 30, 80, 0.25);
     }
 
     .cta:active {
-      transform: scale(0.97);
+      transform: translateY(3px);
+      box-shadow:
+        0 4px 0 rgba(220, 60, 110, 0.18),
+        0 8px 15px rgba(150, 30, 80, 0.2);
     }
 
     /* ICON */
     .icon {
-      width: 25px;
-      height: 25px;
+      width: 38px;
+      height: 38px;
       object-fit: contain;
     }
 
+    /* BOTTOM DECORATION */
+    .bottom-glow {
+      position: fixed;
+      width: 500px;
+      height: 180px;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* MOBILE */
     @media (max-width: 480px) {
+
       .container {
-        padding-top: 45px;
+        padding: 50px 20px 40px;
       }
 
+      .photo-wrapper,
       .profile-photo {
-        width: 135px;
-        height: 135px;
-        margin-bottom: 40px;
+        width: 145px;
+        height: 145px;
+      }
+
+      .photo-wrapper {
+        margin-bottom: 25px;
+      }
+
+      .profile-name {
+        font-size: 40px;
+      }
+
+      .decoration {
+        margin-bottom: 30px;
       }
 
       .cta {
+        height: 68px;
         max-width: 100%;
+        font-size: 19px;
+      }
+
+      .icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .heart {
+        font-size: 35px;
       }
     }
   </style>
+
 </head>
 
 <body>
 
   <div class="container">
 
-    <img
-      class="profile-photo"
-      src="FB_IMG_1784880683467.jpg"
-      alt="Profile Photo"
-    >
-    <a
-      class="cta"
-      href="https://llqkol.prodigiousdates.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2007055&click_id=Enimegeal"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        class="icon"
-        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
-        alt="WhatsApp"
-      >
-      WhatsApp
-    </a>
+```
+<!-- DECORATIVE HEARTS -->
+<div class="heart heart-one">♥</div>
+<div class="heart heart-two">♥</div>
 
-    <a
-      class="cta"
-      href="https://llqkol.prodigiousdates.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2007055&click_id=Enimegeal"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        class="icon"
-        src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg"
-        alt="Video"
-      >
-      Video
-    </a>
+<!-- PROFILE PHOTO -->
+<div class="photo-wrapper">
+  <img
+    class="profile-photo"
+    src="FB_IMG_1784880683467.jpg"
+    alt="Single Momy Profile"
+  >
+</div>
+
+<!-- PROFILE NAME -->
+<h1 class="profile-name">Single Momy</h1>
+
+<!-- TITLE DECORATION -->
+<div class="decoration">
+  <span class="line"></span>
+  <span class="small-heart">♥</span>
+  <span class="line"></span>
+</div>
+
+<!-- WHATSAPP BUTTON -->
+<a
+  class="cta"
+  href="https://llqkol.prodigiousdates.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2007055&click_id=Enimegeal"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    class="icon"
+    src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+    alt="WhatsApp"
+  >
+  WhatsApp
+</a>
+
+<!-- VIDEO BUTTON -->
+<a
+  class="cta"
+  href="https://llqkol.prodigiousdates.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=217823&s2=2007055&click_id=Enimegeal"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    class="icon"
+    src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg"
+    alt="Video"
+  >
+  Video
+</a>
+
+<div class="bottom-glow"></div>
+```
 
   </div>
 

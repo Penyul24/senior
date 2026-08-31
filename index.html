@@ -15,10 +15,24 @@
 
     body {
       min-height: 100vh;
+
       background:
-        radial-gradient(circle at 15% 10%, rgba(255, 105, 160, 0.25), transparent 35%),
-        radial-gradient(circle at 85% 80%, rgba(150, 80, 255, 0.22), transparent 35%),
-        linear-gradient(145deg, #160b18, #2a1025 50%, #120b19);
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(255,255,255,0.45),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(255,105,160,0.35),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #ffc4dc,
+          #f58ab8 50%,
+          #e85b9c
+        );
 
       color: white;
       font-family: Arial, Helvetica, sans-serif;
@@ -45,24 +59,26 @@
       position: fixed;
       border-radius: 50%;
       filter: blur(70px);
-      opacity: 0.25;
       pointer-events: none;
+      z-index: 0;
     }
 
     .blob-one {
       width: 180px;
       height: 180px;
-      background: #ff4f91;
+      background: #ffffff;
       top: 5%;
       left: -80px;
+      opacity: 0.28;
     }
 
     .blob-two {
       width: 220px;
       height: 220px;
-      background: #8e4dff;
+      background: #ff4f91;
       bottom: 5%;
       right: -110px;
+      opacity: 0.25;
     }
 
     /* PROFILE */
@@ -72,6 +88,7 @@
       width: 165px;
       height: 165px;
       margin-bottom: 25px;
+      z-index: 2;
     }
 
     .photo-wrapper::after {
@@ -83,9 +100,10 @@
 
       background: linear-gradient(
         135deg,
-        #ff7bab,
         #ffffff,
-        #b46cff
+        #ff5f9d,
+        #ffffff,
+        #ff8fbd
       );
 
       z-index: 0;
@@ -113,10 +131,10 @@
       object-fit: cover;
 
       border-radius: 34px;
-      border: 5px solid #21101f;
+      border: 5px solid rgba(255,255,255,0.9);
 
       box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.45);
+        0 20px 45px rgba(130, 30, 75, 0.28);
     }
 
     /* NAME */
@@ -133,21 +151,30 @@
       background: linear-gradient(
         90deg,
         #ffffff,
-        #ff9dc2,
+        #fff1f7,
         #ffffff
       );
 
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+
+      position: relative;
+      z-index: 2;
+
+      text-shadow:
+        0 4px 15px rgba(130, 30, 75, 0.15);
     }
 
     .subtitle {
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.85);
       font-size: 14px;
       letter-spacing: 2px;
       text-transform: uppercase;
 
       margin-bottom: 28px;
+
+      position: relative;
+      z-index: 2;
     }
 
     /* DIVIDER */
@@ -159,21 +186,28 @@
 
       width: 180px;
       margin-bottom: 30px;
+
+      position: relative;
+      z-index: 2;
     }
 
     .divider span {
       flex: 1;
       height: 1px;
+
       background: linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,0.5)
+        rgba(255,255,255,0.8)
       );
     }
 
     .divider b {
-      color: #ff7eae;
+      color: #ffffff;
       font-size: 18px;
+
+      text-shadow:
+        0 3px 10px rgba(150, 20, 80, 0.25);
     }
 
     /* CTA */
@@ -181,6 +215,7 @@
     .cta {
       position: relative;
       overflow: hidden;
+      z-index: 2;
 
       width: 100%;
       max-width: 380px;
@@ -198,18 +233,18 @@
       background:
         linear-gradient(
           135deg,
-          rgba(255,255,255,0.13),
-          rgba(255,255,255,0.05)
+          rgba(255,255,255,0.38),
+          rgba(255,255,255,0.20)
         );
 
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.55);
 
       color: white;
       text-decoration: none;
 
       box-shadow:
-        0 15px 35px rgba(0,0,0,0.25),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+        0 15px 35px rgba(130, 30, 75, 0.18),
+        inset 0 1px 0 rgba(255,255,255,0.5);
 
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -232,7 +267,7 @@
 
       border-radius: 50%;
 
-      background: rgba(255, 105, 160, 0.16);
+      background: rgba(255,255,255,0.22);
 
       filter: blur(10px);
     }
@@ -240,17 +275,17 @@
     .cta:hover {
       transform: translateY(-5px);
 
-      border-color: rgba(255,130,180,0.6);
+      border-color: rgba(255,255,255,0.85);
 
       background:
         linear-gradient(
           135deg,
-          rgba(255,255,255,0.18),
-          rgba(255,255,255,0.07)
+          rgba(255,255,255,0.48),
+          rgba(255,255,255,0.25)
         );
 
       box-shadow:
-        0 20px 40px rgba(0,0,0,0.35);
+        0 20px 40px rgba(130, 30, 75, 0.25);
     }
 
     .cta:active {
@@ -271,17 +306,19 @@
 
       border-radius: 16px;
 
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.25);
+
+      border: 1px solid rgba(255,255,255,0.35);
     }
 
     .icon {
       width: 29px;
       height: 29px;
 
-      filter: brightness(0) invert(1);
-
       position: relative;
       z-index: 2;
+
+      filter: brightness(0) invert(1);
     }
 
     /* TEXT */
@@ -301,11 +338,14 @@
       font-weight: 700;
 
       margin-bottom: 4px;
+
+      text-shadow:
+        0 2px 8px rgba(130, 30, 75, 0.2);
     }
 
     .cta-description {
       font-size: 12px;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.82);
     }
 
     .arrow {
@@ -313,7 +353,7 @@
 
       font-size: 22px;
 
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.8);
 
       position: relative;
       z-index: 2;
@@ -323,7 +363,7 @@
 
     .cta:hover .arrow {
       transform: translateX(5px);
-      color: #ff91b8;
+      color: #ffffff;
     }
 
     /* FOOTER */
@@ -332,9 +372,12 @@
       margin-top: 18px;
 
       font-size: 11px;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.75);
 
       letter-spacing: 1px;
+
+      position: relative;
+      z-index: 2;
     }
 
     /* MOBILE */
@@ -432,7 +475,7 @@
       <div class="icon-box">
         <img
           class="icon"
-          src="https://track.chatvideocall.net/s/9a24608a59183?track=abs"
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
           alt="WhatsApp"
         >
       </div>
